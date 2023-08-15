@@ -82,6 +82,24 @@ datetime.date(2015, 2, 5)
 True
 ```
 
+## Usage
+
+### Pretty Printing
+
+You can call `._print()` on any PrettyTime object to get a pretty-printed string representation of the time. This can be useful when you want to display the time in a more human-readable format.
+
+Examples:
+
+```python
+>>> from prettytime import *
+>>> print(t(4).hours.from_.now._print())
+"4 hours from now"
+>>> print(t(1).years.from_.today._print())
+"1 year from today"
+>>> print(t()._print())
+"now"
+```
+
 ## Planned changes:
 
  + Add [`django-pretty-times`](https://pypi.python.org/pypi/django-pretty-times/0.1.0)-like functionality to allow pretty printing as well

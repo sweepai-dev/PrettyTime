@@ -110,6 +110,9 @@ class t(object):
             self.num = None
             self.today = datetime.datetime.today()
 
+    def _print(self):
+        return self.today.strftime("%Y-%m-%d %H:%M:%S")
+
     def _make(self, timedict):
         return PrettyDelta(**timedict)
 
@@ -146,6 +149,9 @@ class PrettyDelta(expandeddelta, DeltaMixin):
     def get_delta2(self, direction):
         # direction is operator.pos or operator.neg
         return PrettyDelta2(order=self._order(), **direction(self).__dict__)
+
+    def _print(self):
+        return (self._order().today() - self).strftime("%Y-%m-%d %H:%M:%S")
 
     @property
     def From(self):
